@@ -1,6 +1,7 @@
 package com.example.myselfdynamicapk;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -138,17 +139,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()) {
             case R.id.click:
                 // TODO 19/08/25
-                loadPlugResource();
 
-                try {
-                    final String[] uninstallApkInfo = getUninstallApkInfo(this, APK_PATH);
+                Intent intent = new Intent(MainActivity.this, SubActivity.class);
+                startActivity(intent);
 
-                    final String result = runPlugApkMethod(APK_PATH, uninstallApkInfo[1]);
 
-                    Log.d(TAG, "onClick: "+result);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+//                loadPlugResource();
+//
+//                try {
+//                    final String[] uninstallApkInfo = getUninstallApkInfo(this, APK_PATH);
+//
+//                    final String result = runPlugApkMethod(APK_PATH, uninstallApkInfo[1]);
+//
+//                    Log.d(TAG, "onClick: "+result);
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
                 break;
             default:
                 break;
